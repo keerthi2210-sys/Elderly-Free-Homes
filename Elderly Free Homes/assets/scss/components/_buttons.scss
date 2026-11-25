@@ -1,0 +1,210 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 Buttons
+/*----------------------------------------*/
+
+.#{$theme-prifix}-btn{
+	display: inline-block;
+	font-weight: 500;
+	font-size: 16px;
+	background-color: var(--tp-red-1);
+	padding: 17px 42px;
+	color: var(--tp-common-white);
+	border: 1px solid var(--tp-red-1);
+	& svg{
+		@extend %svg-2;
+	}
+	&:hover{
+		color: var(--tp-red-1);
+		background-color: transparent;
+	}
+
+	&-2{/* for home one slider */
+		background-color: var(--tp-red-1);
+		color: var(--tp-common-white);
+		display: inline-block;
+		padding: 27px 46px;
+		border: 0;
+		line-height: 1;
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: capitalize;
+		&:hover{
+			background-color: var(--tp-common-black);
+			color: var(--tp-common-white);
+		}
+	}
+
+	&-3{/* for home one slider */
+		display: inline-block;
+		font-weight: 500;
+		font-size: 16px;
+		background-color: var(--tp-theme-primary);
+		padding: 20px 42px;
+		color: var(--tp-common-white);
+		border: 1px solid var(--tp-theme-primary);
+		@media #{$xs} {
+			padding: 20px 20px;
+		}
+		& svg{
+			@extend %svg-2;
+		}
+		&:hover{
+			color: var(--tp-theme-primary);
+			background-color: transparent;
+		}
+	}
+
+
+	&-white{ /* for home electronic */
+		background-color: var(--tp-common-white);
+		padding: 7px 26px;
+		box-shadow: 0px 1px 2px rgba(1, 15, 28, 0.1);
+		color: var(--tp-common-black);
+		padding: 9px 29px;
+
+		&:hover{
+			background-color: var(--tp-common-black);
+			color: var(--tp-common-white);
+		}
+	}
+
+	&-border{
+		background-color: transparent;
+		border: 1.5px solid var(--tp-common-black);
+		color: var(--tp-common-black);
+		padding: 8px 29px;
+		& svg{
+			@include transform(translateY(-2px) !important);
+		}
+		&:hover{
+			background-color: var(--tp-theme-secondary);
+			border-color: var(--tp-theme-secondary);
+			color: var(--tp-common-white);
+		}
+
+		&-sm{
+			padding: 5px 25px;
+		}
+		&-white{
+			border-color: rgba($color: $white, $alpha: .3);
+			color: var(--tp-common-white);
+			&:hover{
+				color: var(--tp-common-white);
+				background-color: var(--tp-common-black);
+				border-color: var(--tp-common-black);
+			}
+
+			&-sm{
+				padding: 4px 26px 6px;
+			}
+		}
+		&-2{
+			border: 2px solid rgba($color: #04092D, $alpha: .1);
+			font-weight: 500;
+			font-size: 13px;
+			color: var(--tp-common-black);
+			background-color: transparent;
+			padding: 8px 17px;
+			& span{
+				margin-left: 3px;
+			}
+
+			& svg{
+				@extend %svg-1;
+			}
+
+			&:hover{
+				background-color: var(--tp-theme-primary);
+				border-color: var(--tp-theme-primary);
+				color: var(--tp-common-white);
+			}
+		}
+	}
+
+}
+
+/* hamburger btn */
+.#{$theme-prifix}-hamburger-btn{
+	height: 16px;
+	width: 22px;
+	line-height: 16px;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	& span{
+		background: var(--tp-common-black);
+		border-radius: 3px;
+		content: '';
+		position: absolute;
+		width: 22px;
+		height: 2px;         
+		left: 0;
+		-webkit-transition: .3s ease-in-out;
+		-moz-transition: .3s ease-in-out;
+		-o-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+		&::before,
+		&::after{
+			background: var(--tp-common-black);
+			border-radius: 3px;
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 2px;         
+			margin-top: 13px; 
+			left: 0;
+			-webkit-transition: .3s ease-in-out;
+			-moz-transition: .3s ease-in-out;
+			-o-transition: .3s ease-in-out;
+			transition: .3s ease-in-out;
+		}
+		&::before{
+			margin-top:-7px;
+		}
+		&::after{
+			margin-top: 7px;
+			width: 13px;
+		}
+	}
+	&.active{
+		& span{
+			background: transparent;
+
+			&::before{
+				margin-top: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			&::after{
+				margin-top: 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	&-white{
+		& span{
+			background-color: var(--tp-common-white);
+
+			&::after,
+			&::before{
+				background-color: var(--tp-common-white);
+			}
+		}
+	}
+}
+
+.menu-btn {
+	width: 140px;
+	padding: 17px 17px;
+	&:hover {
+		border-color: var(--tp-common-white);
+		color: var(--tp-common-white);
+	}
+}

@@ -1,0 +1,100 @@
+@use '../utils' as *;
+/*---------------------------------
+    1.2 Common Classes
+---------------------------------*/
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.include-bg{
+	@include background();
+}
+
+
+// demo for method
+.demo{
+	@include transition(color, .3s, linear);	
+
+	@include transition-mul((color .3s linear, transform .2s ease));	
+
+	@include rtl{
+		margin-left: 0;
+		margin-right: 15px;
+	}
+	@include root('div'){
+		img{
+			margin-left: 10px;
+		}
+	}
+	@include dark{
+		color: yellow;
+	}
+}
+
+
+/*----------------------------------------
+    Body Overlay 
+-----------------------------------------*/
+.body-overlay{
+    background-color: var(--tp-common-black);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	@include transition();
+
+	&:hover{
+		cursor: url('../img/icon/cross-out.png'), pointer;
+	}
+}
+
+.body-overlay.opened{
+	opacity: .7;
+    visibility: visible;
+}
+.container-large {
+	max-width: 1685px;
+}
+.container-large-2 {
+	max-width: 1455px;
+}

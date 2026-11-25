@@ -1,0 +1,59 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.3 Brand css
+/*----------------------------------------*/
+.#{$theme-prifix}-brand {
+    &-border {
+        padding-top: 54px;
+        margin-top: 110px;
+        border-top: 1px solid #D9D9D9;
+    }
+    &-wrap {
+        & span {
+            color: var(--tp-theme-primary);
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    &-item {
+        text-align: center;
+        @media #{$xs} {
+            margin-top: 20px;
+            
+        }
+    }
+}
+
+.#{$theme-prifix}-error {
+    &-count {
+        color: var(--tp-blue-1);
+        font-size: 300px;
+        font-weight: 600;
+        text-transform: capitalize;
+        @media #{$lg} {
+            font-size: 220px;
+        }
+        @media #{$md} {
+            font-size: 180px;
+        }
+        @media #{$xs} {
+            font-size: 160px;
+        }
+    }
+    &-title {
+        font-size: 60px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 60px;
+        @media #{$lg} {
+            font-size: 48px;
+        }
+        @media #{$md} {
+            font-size: 42px;
+        }
+        @media #{$xs} {
+            font-size: 36px;
+        }
+    }
+}

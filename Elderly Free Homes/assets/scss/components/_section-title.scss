@@ -1,0 +1,128 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.15 Section Title
+/*----------------------------------------*/
+
+.#{$theme-prifix}-section{
+    & span {
+        display: inline-block;
+        margin-bottom: -3px;
+        animation: spin-2 1s ease-in-out 0.1s forwards infinite alternate;
+        @include animation((spin-2 2500ms forwards infinite alternate));
+        transform-origin: bottom left;
+    }
+    &-subtitle{
+        color: var(--tp-red-1);
+        font-family: var(--tp-ff-inter);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 1.65px;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+    }
+    &-title{
+        font-size: 54px;
+        font-weight: 600;
+        line-height: 1.209;
+        text-transform: capitalize;
+        margin-bottom: 0;
+        @media #{$lg} {
+            font-size: 40px;
+        }
+        @media #{$md} {
+            font-size: 48px;
+        }
+        @media #{$xs} {
+            font-size: 30px;
+        }
+        & br {
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+    & p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 33px;
+        text-transform: capitalize;
+        margin-bottom: 0;
+        
+    }
+    &.fs-38 {
+        & .tp-section-title {
+            font-size: 38px;
+            @media #{$lg} {
+                font-size: 32px;
+            }
+            @media #{$xs} {
+                font-size: 24px;
+            }
+        }
+    }
+    &.fs-48 {
+        & .tp-section-title {
+            font-size: 48px;
+            color: var(--tp-common-white);
+            @media #{$lg} {
+                font-size: 40px;
+            }
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        }
+        &.tp-section p {
+            margin-left: -30px;
+            text-transform: inherit;
+            font-size: 16px;
+            color: var(--tp-common-white);
+            margin-top: 63px;
+            position: relative;
+            padding-left: 11px;
+            @media #{$md,$xs} {
+                margin-left: 0;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                height: calc(100% - 16px);
+                width: 1px;
+                background-color: var(--tp-red-1);
+            }
+        }
+    }
+    &.fs-40 {
+        & .tp-section-title {
+            color: var(--tp-common-white);
+            font-size: 40px;
+            @media #{$xs} {
+                font-size: 34px;
+            }
+        }
+        & p {
+            color: #7885A7;
+        }
+    }
+    &.text-p {
+        & p {
+            position: relative;
+            padding-left: 14px;
+            text-transform: inherit;
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: calc(100% - 18px);
+                width: 2px;
+                background-color: var(--tp-red-1);
+            }
+        }
+    }
+}

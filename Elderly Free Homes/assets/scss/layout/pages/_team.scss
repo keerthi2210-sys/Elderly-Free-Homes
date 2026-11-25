@@ -1,0 +1,285 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.17 Team css
+/*----------------------------------------*/
+.#{$theme-prifix}-team {
+    &-item {
+        &:hover {
+            & .tp-team-social-wrap {
+                opacity: 1;
+                visibility: visible;
+                top: -108px;
+            }
+            & .tp-team-social > span {
+                background-color: var(--tp-common-white);
+                color: var(--tp-theme-primary);
+                & i {
+                    transform: rotate(135deg);
+                }
+            }
+        }
+    }
+    &-thumb {
+        & img {
+            width: 100%;
+        }
+    }
+    &-title {
+        font-size: 22px;
+        & a {
+            &:hover {
+                color: var(--tp-red-1);
+            }
+        }
+    }
+    &-content {
+        margin-top: -10px;
+        & span {
+            color: var(--tp-red-1);
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+    &-social {
+        position: relative;
+        & > span {
+            height: 42px;
+            width: 42px;
+            line-height: 42px;
+            background-color: var(--tp-red-1);
+            border-radius: 50%;
+            text-align: center;
+            display: inline-block;
+            color: var(--tp-common-white);
+            box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.06);
+            transform: translateY(-30px);
+            @include transition();
+            & i {
+                font-size: 13px;
+                @include transition();
+            }
+        }
+        &-wrap {
+            position: absolute;
+            border-radius: 5px;
+            top: -80px;
+            background-color: var(--tp-common-white);
+            left: 80px;
+            right: 80px;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            visibility: hidden;
+            @include transition();
+            @media #{$lg} {
+                left: 30px;
+                right: 30px;
+            }
+            @media #{$xs} {
+                left: 60px;
+                right: 60px;
+            }
+            @media #{$sm} {
+                left: 140px;
+                right: 140px;
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                width: 18px;
+                height: 13px;
+                background-color: var(--tp-common-white);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                clip-path: polygon(100% 1%, 0 0, 50% 100%);
+            }
+            & a {
+                display: inline-block;
+                font-size: 14px;
+                color: var(--tp-theme-primary);
+                padding: 12px 13px;
+                &:hover {
+                    color: var(--tp-red-1);
+                }
+            }
+        }
+    }
+}
+
+.#{$theme-prifix}-team {
+    &-details {
+        &-thumb {
+            position: relative;
+        }
+        &-social {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            &-wrap {
+                display: inline-block;
+                background-color: var(--tp-common-white);
+                padding: 14px 20px;
+                border-radius: 50px;
+                & a {
+                    height: 42px;
+                    width: 42px;
+                    line-height: 42px;
+                    border: 1px solid transparent;
+                    display: inline-block;
+                    border-radius: 50%;
+                    text-align: center;
+                    color: #9497A3;
+                    font-size: 14px;
+                    margin: 0 5px;
+                    &:hover {
+                        border-color: rgba(44, 46, 52, 0.10);
+                        color: var(--tp-red-1);
+                    }
+                }
+            }
+        }
+        &-wrap {
+            & .tp-section-title {
+                margin-bottom: 35px;
+            }
+            & > p {
+                margin-bottom: 47px;
+                & br {
+                    @media #{$lg,$md,$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        &-content {
+            & span {
+                color: var(--tp-red-1);
+                font-size: 16px;
+                font-weight: 500;
+                display: inline-block;
+                margin-bottom: 30px;
+            }
+            & p {
+                line-height: 28.8px;
+                margin-bottom: 21px;
+            }
+        }
+        &-thumb {
+            & img {
+                width: 100%;
+                border-radius: 12px;
+            }
+        }
+        &-progress {
+            &-title {
+                color: var(--tp-blue-1);
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            &-item {
+                & .progress, .progress-stacked {
+                    overflow: inherit;
+                    height: 2px;
+                    background: #F1F1F2;
+                    position: relative;
+                    width: 100%;
+                }
+                & .progress-bar {
+                    border-radius: 2px;
+                    background-color: var(--tp-red-1);
+                    height: 4px;
+                    transform: translateY(-8px);
+                    overflow: inherit;
+                    & span {
+                        position: absolute;
+                        right: 0;
+                        top: -22px;
+                        color: #082060;
+                        font-size: 16px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        @media #{$xs} {
+                            font-size: 12px;
+                            top: -19px;
+                        }
+                    }
+                }
+            }
+        }
+        &-info {
+            gap: 60px;
+            &-icon {
+                flex: 0 0 auto;
+                margin-right: 19px;
+                & span {
+                    color: var(--tp-red-1);
+                    display: inline-block;
+                    font-size: 50px;
+                    & i {
+                        display: inline-block;
+                        transform: translateY(6px);
+                    }
+                }
+            }
+            &-item {
+                display: flex;
+                align-items: center;
+                flex: 0 0 auto;
+            }
+            &-content {
+                & span {
+                    color: var(--tp-common-black);
+                    display: block;
+                    & i {
+                        transform: translateY(3px);
+                    }
+                }
+                & a {
+                    color: var(--tp-blue-1);
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+            }
+        }
+        &-contact {
+            border: 1px solid rgba(212, 220, 224, 0.44);
+            background: #FFF;
+            box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.04);
+            padding: 42px 53px 49px 42px;
+            @media #{$lg} {
+                padding: 30px 20px 35px 20px;
+            }
+            @media #{$xs} {
+                padding: 30px 20px 35px 20px;
+            }
+            & .tp-contact-form-input {
+                margin-bottom: 25px;
+                & span {
+                    left: 15px;
+                    & i {
+                        transform: translateY(3px);
+                    }
+                }
+                & input {
+                    border: 1px solid rgba(212, 220, 224, 0.26);
+                    border-radius: 5px;
+                    padding: 5px 45px 5px 45px;
+                    &:focus {
+                        border-color: #D4DCE0;
+                    }
+                }
+            }
+        }
+    }
+}

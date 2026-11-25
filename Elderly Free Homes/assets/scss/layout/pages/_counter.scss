@@ -1,0 +1,37 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.7 Counter css
+/*----------------------------------------*/
+.#{$theme-prifix}-counter {
+    &-3 {
+        &-bg {
+            padding-top: 36px;
+            padding-bottom: 30px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-bottom: -76px;
+            position: relative;
+            z-index: 1;
+        }
+        &-count {
+            color: var(--tp-common-white);
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 11px;
+        }
+        &-item {
+            text-align: center;
+            @media #{$xs} {
+                margin-bottom: 30px;
+            }
+            & p {
+                margin-bottom: 0;
+                color: var(--tp-common-white);
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+}

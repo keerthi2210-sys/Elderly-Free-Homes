@@ -1,0 +1,38 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  2.9 Pagination
+/*----------------------------------------*/
+
+.#{$theme-prifix}-pagination{
+	& ul{
+		@include flexbox();
+		& li{
+			display: inline-block;
+			&:not(:last-child){
+				margin-right: 12px;
+			}
+			& a,
+			& span{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				line-height: 38px;
+				text-align: center;
+				border: 2px solid rgba($color: #EDEDED, $alpha: 1);
+				font-size: 16px;
+				font-weight: 500;
+				color: #071C34;
+				&:hover,
+				&.current{
+					background: var(--tp-red-1);
+					border-color: var(--tp-red-1);
+					color: var(--tp-common-white);
+				}
+
+				& svg{
+					@extend %svg-2;
+				}
+			}
+		}
+	}
+}

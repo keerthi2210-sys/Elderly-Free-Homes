@@ -1,0 +1,171 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.19 Video css
+/*----------------------------------------*/
+.#{$theme-prifix}-intro {
+    &-wrap {
+        @media #{$md,$xs} {
+            margin-top: 40px;
+        }
+    }
+    &-bg {
+        background-color: var(--tp-theme-secondary);
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+        position: relative;
+        z-index: 1;
+    }
+    &-thumb {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        &:hover {
+            & span {
+                bottom: 0;
+                left: 0;
+            }
+        }
+        & img {
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        & span {
+            position: absolute;
+            bottom: -19px;
+            left: 19px;
+            height: 204px;
+            width: 404px;
+            border-radius: 10px;
+            background-color: var(--tp-red-1);
+            z-index: -1;
+            @include transition();
+            @media #{$lg} {
+                height: 175px;
+                width: 350px;
+            }
+            @media #{$xs} {
+                display: none;
+            }
+        }   
+        & a {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            display: inline-block;
+            border-radius: 50%;
+            height: 75px;
+            width: 75px;
+            background-color: #EDC701;
+            border-radius: 50%;
+            line-height: 75px;
+            text-align: center;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 5.5px;
+                left: 4.8px;
+                height: 65px;
+                width: 65px;
+                border: 1px dashed #000;
+                border-radius: 50%;
+                @include animation((spin 8000ms linear infinite));
+            }
+            & i {
+                font-size: 18px;
+                color: var(--tp-common-black);
+            }
+        }
+    }
+    &-child {
+        background-color: var(--tp-red-1);
+        display: inline-block;
+        padding: 18px 21.5px;
+        position: absolute;
+        top: -25px;
+        right: 8px;
+        z-index: 1;
+        &::before {
+            position: absolute;
+            content: '';
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            top: 0;
+            left: -20px;
+            height: 25px;
+            width: 20px;
+            background-color: #A81017;
+        }
+        &-count {
+            margin-bottom: 0;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-heading);
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 29px;
+        }
+        & p  {
+            margin-bottom: 0;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-heading);
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 29px;
+        }
+    }
+}
+.#{$theme-prifix}-register {
+    &-icon {
+        position: absolute;
+        bottom: -50px;
+        @media #{$md,$xs} {
+            bottom: auto;
+            top: -25px;
+        }
+        & span {
+            display: inline-block;
+            height: 84px;
+            width: 84px;
+            line-height: 84px;
+            background-color: var(--tp-red-1);
+            text-align: center;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                clip-path: polygon(0 0, 0% 100%, 100% 100%);
+                height: 25px;
+                width: 20px;
+                background-color: #A81017;
+                top: 0;
+                right: -20px;
+            }
+        }
+    }
+    &-thumb {
+        position: relative;
+        & img {
+            border-radius: 10px;
+        }
+    }
+    &-content {
+        @media #{$md,$xs} {
+            margin-left: 0;
+            margin-top: 30px;
+        }
+        & a {
+            color: var(--tp-heading-primary);
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: capitalize;
+            &:hover {
+                color: var(--tp-red-1);
+            }
+            & i {
+                margin-left: 9px;
+                transform: translateY(2px);
+            }
+        }
+    }
+}

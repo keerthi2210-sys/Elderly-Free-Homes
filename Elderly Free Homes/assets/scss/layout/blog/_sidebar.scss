@@ -1,0 +1,192 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  5.3 Sidebar css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-sidebar{
+    $self : &;
+    &-widget{
+        background: #F8F8F8;
+        padding: 40px 32px 32px 32px;
+        &-title{
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+            position: relative;
+            padding-left: 10px;
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 100%;
+                width: 2px;
+                background-color: var(--tp-red-1);
+            }
+        }
+        & ul{
+            & li{
+                list-style: none;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                & a{
+                    position: relative;
+                    padding-left: 16px;
+                    font-size: 16px;
+                    color: #55585B;
+                    display: block;
+
+                    & span{
+                        float: right;
+                    }
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        width: 4px;
+                        height: 4px;
+                        background-color: #CED2D6;
+                        border-radius: 50%;
+                        left: 0;
+                        top: 12px;
+                    }
+
+                    &:hover{
+                        color: var(--tp-theme-primary);
+                    }
+                }
+
+                & ul{
+                    padding-left: 15px;
+                    padding-top: 6px;
+
+                }
+            }
+        }
+        &-Catagory {
+            & a {
+                display: block;
+                color: var(--tp-theme-primary);
+                font-size: 18px;
+                text-transform: capitalize;
+                margin-bottom: 25px;
+                &:hover {
+                    text-decoration: underline;
+                    & i {
+                        color: var(--tp-theme-primary);
+                    }
+                }
+                & i {
+                    float: right;
+                    font-size: 12px;
+                    color: #5E5F63;
+                }
+            }
+        }
+    }
+    &-search {
+        position: relative;
+        &-input {
+            & input {
+                background-color: var(--tp-common-white);
+                padding:0 50px 0 15px;
+                &:focus {
+                    border-color: var(--tp-red-1);
+                }
+                &::placeholder {
+                    font-size: 16px;
+                }
+            }
+        }
+        &-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            & i {
+                color: #1B1B1B;
+            }
+        }
+    }
+    &-avatar {
+        padding-top: 25px;
+        padding-bottom: 35px;
+        &-thumb {
+            margin-bottom: 16px;
+            & img {
+                height: 100px;
+                width: 100px;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+        }
+        &-title {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+        & span {
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 11px;
+        }
+        & p {
+            line-height: 28.8px;
+            margin-bottom: 25px;
+            & br {
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+        }
+        &-social {
+            & a {
+                height: 42px;
+                width: 42px;
+                line-height: 42px;
+                display: inline-block;
+                text-align: center;
+                margin: 0 5px;
+                color: #7D7E80;
+                &:hover {
+                    background-color: var(--tp-red-1);
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+}
+
+// tagcloud
+.tagcloud{
+    & a{
+        color: #5E5F63;
+        padding: 6px 23px;
+        font-size: 15px;
+        text-transform: capitalize;
+        display: inline-block;
+        margin-bottom: 8px;
+        box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.02);
+        background-color: var(--tp-common-white);
+        &:hover{
+            background-color: var(--tp-red-1);
+            color: var(--tp-common-white);
+        }
+    }
+}
+.tagcloud-sm  {
+    & a {
+        margin-right: 9px;
+        padding: 3px 20px;
+        border: 1px solid #eaebeb;
+        text-transform: uppercase;
+        font-size: 14px;
+        &:hover {
+            border-color: var(--tp-red-1);
+        }
+    }
+}

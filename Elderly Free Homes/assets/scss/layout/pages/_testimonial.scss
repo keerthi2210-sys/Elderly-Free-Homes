@@ -1,0 +1,307 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.18 Testimonial css
+/*----------------------------------------*/
+.#{$theme-prifix}-testimonial {
+    &-bg {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            height: 34%;
+            width: 100%;
+            background-color: #f1ebe9;
+        }
+    }
+    &-item {
+        background: var(--tp-common-white);
+        box-shadow: 0px -3px 20px 0px rgba(0, 0, 0, 0.05);
+        padding: 45px 45px 37px 50px;
+        position: relative;
+        @media #{$lg} {
+            padding: 45px 20px 37px 20px;
+        }
+        @media #{$md} {
+            padding: 45px 30px 37px 30px;
+        }
+        @media #{$xs} {
+            padding: 45px 25px 37px 25px;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            z-index: -5;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            @include transition();
+            border: 1px solid var(--tp-red-1);
+            opacity: 0;
+        }
+    }
+    &-rating {
+        & span {
+            color: var(--tp-red-1);
+            font-size: 14px;
+        }
+    }
+    &-content {
+        & p {
+            font-size: 18px;
+            line-height: 2.17;
+            border-bottom: 1px solid #EFEFEF;
+            padding-bottom: 16px;
+            margin-bottom: 22px;
+            @media #{$lg} {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+        }
+    }
+    &-avatar {
+        &-thumb { 
+            margin-right: 20px;
+            position: relative;
+            &::before ,
+            &::after  {
+                position: absolute;
+                content: '';
+                top: -7px;
+                left: -7px;
+                height: 2px;
+                width: 36px;
+                background-color: #FB8484;
+            }
+            &::after {
+                width: 2px;
+                height: 36px;
+            }
+            & img {
+                height: 68px;
+                width: 72px;
+                object-fit: cover;
+            }
+        }
+        &-title {
+            font-family: var(--tp-ff-body);
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: capitalize;
+            margin-bottom: 4px;
+        }
+        &-info {
+            & span {
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+        }
+    }
+    &-active {
+        & .swiper-slide {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            &.swiper-slide-active {
+                & .tp-testimonial-item::before {
+                    top: 10px;
+                    left: 10px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &-about {
+        &-wrap {
+            position: relative;
+            z-index: 1;
+        }
+        &-bg {
+            position: absolute;
+            z-index: -1;
+            top: -330px;
+            left: 0;
+            height: 930px;
+            width: 100%;
+            background-color: var(--tp-theme-secondary);
+        }
+    }
+}
+
+.#{$theme-prifix}-testimonial {
+    &-2 {
+        &-bg {
+            position: relative;
+        }
+        &-wrap {
+            position: relative;
+        }
+        &-wrapper {
+            position: relative;
+            @media #{$xl,$lg,$md,$xs} {
+                margin-left: 0;
+            }
+        }
+        &-thumb {
+            & img {
+                max-width: 100%;
+            }
+        }
+        &-shape {
+            &-1 {
+                position: absolute;
+                bottom: -77px;
+                right: 70px;
+                @media #{$lg} {
+                    bottom: -90px;
+                    right: -4px;
+                }
+                & img {
+                    max-width: 100%;
+                }
+            }
+            &-2 {
+                position: absolute;
+                bottom: 40px;
+                left: -28px;
+                z-index: -1;
+                @media #{$xs} {
+                    left: 0;
+                }
+                & img {
+                    max-width: 100%;
+                }
+            }
+        }
+        &-content {
+            & >  p {
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.61;
+                border-bottom: 1px solid #EFEFEF;
+                margin-bottom: 30px;
+                padding-bottom: 25px;
+                @media #{$lg} {
+                    font-size: 24px;
+                }
+                @media #{$xs} {
+                    font-size: 20px;
+                }
+                & br {
+                    @media #{$lg,$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-avater {
+            &-thumb {
+                margin-right: 17px;
+                flex: 0  0 auto;
+                position: relative;
+                margin-left: 9px;
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: '';
+                    height: 37px;
+                    width: 2px;
+                    background-color: #FB8484;
+                    top: -9px;
+                    left: -9px;
+                }
+                &::after {
+                    content: '';
+                    height: 2px;
+                    width: 37px;
+                }
+                & img {
+                    width: 72px;
+                    height: 68px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+            &-info {
+                & span {
+                    color: var(--tp-theme-primary);
+                    font-size: 22px;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    display: inline-block;
+                    margin-bottom: 5px;
+                }
+                & p {
+                    font-size: 18px;
+                    text-transform: capitalize;
+                    line-height: 1;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-pagination {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 9;
+            & .swiper-pagination-bullet {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                opacity: 1;
+                margin: 0 7px;
+                background-color: #E3E3E3;
+                @include transition();
+                &.swiper-pagination-bullet-active {
+                    background-color: var(--tp-red-1);
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        height: 26px;
+                        width: 26px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50% , -50%);
+                        border: 1px solid var(--tp-red-1);
+                        border-radius: 50%;
+                        @include transition();
+                    }
+                }
+            }
+        }
+        &-shape {
+            &-3 {
+                position: absolute;
+                top: 0;
+                right: 75px;
+                @media #{$xl,$lg} {
+                    top: -25px;
+                }
+                & img {
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    box-shadow: (0px 4px 16px rgba(0, 0, 0, 0.10));
+                }
+            }
+            &-4 {
+                position: absolute;
+                top: 30px;
+                left: 50px;
+                @media #{$xl,$lg} {
+                    top: -25px;
+                }
+                & img {
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    box-shadow: (0px 4px 16px rgba(0, 0, 0, 0.10));
+                }
+            }
+        }
+    }
+}
